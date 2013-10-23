@@ -8,4 +8,10 @@ module ApplicationHelper
   def user_content(&block)
     capture(&block) if current_user
   end
+  # Displays wrapped content if a user is logged out.
+  #
+  # Returns nothing.
+  def visitor_content(&block)
+    capture(&block) if !current_user
+  end
 end
