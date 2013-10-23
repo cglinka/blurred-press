@@ -3,6 +3,10 @@
 
   %p I'm a web developer and this is a practice blog.
 
+  %ul.side-nav
+    - @posts.each do |post|
+      = post_link(post, @post)
+
 - @posts.each do |post|
   .post-preview
     %h2= link_to(post.title, post)
